@@ -19,9 +19,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     private var foundBeacon = false
     
     private let beaconUUIDs = [
-        "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0",
-        "5A4BCFCE-174E-4BAC-A814-092E77F6B7E5",
-        "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"
+        "4B57454D-4131-3830-3130-303131360000",
+        "4B57454D-4132-3230-3830-30303030303D"
     ]
     
     override func viewDidLoad() {
@@ -72,7 +71,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         for (i, uuid) in beaconUUIDs.enumerated() {
 //            if i != 0 { return }
-            let beaconRegion = CLBeaconRegion(uuid: UUID(uuidString: uuid)!, major: 123, minor: 456, identifier: "MyBeacon\(i)")
+            let beaconRegion = CLBeaconRegion(uuid: UUID(uuidString: uuid)!, major: 4660, minor: 39031, identifier: "MyBeacon\(i)")
             locationManager?.startMonitoring(for: beaconRegion)
             locationManager?.startRangingBeacons(satisfying: beaconRegion.beaconIdentityConstraint)
         }
